@@ -9,11 +9,11 @@ module.exports = {
     const { email } = req.body;
 
     // Check if user exists or not (to avoid duplicates)
-    let user = await User.findOne({ email: email });
+    let user = await User.findOne({ email });
 
     if (!user) {
         // Waiting for store to happen to procced
-        const user = await User.create({ email });
+        user = await User.create({ email });
     }
 
     // Continue returning the user created
