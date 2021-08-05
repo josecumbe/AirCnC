@@ -17,6 +17,5 @@ routes.get('/spots', spotController.index);
 routes.get('/userspots', userSpotsController.show);
 routes.post('/spots/:spot_id/bookings', bookingController.store);
 
-
 // Exporting routes  
 module.exports = routes;
